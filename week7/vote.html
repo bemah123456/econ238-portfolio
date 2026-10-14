@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vote: Proposition 238</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700;8..60,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="masthead"><div class="wrap"><span>Official Ballot · Proposition 238</span><span>Anonymous</span></div></div>
+
+<main class="wrap" style="padding-top:32px">
+  <p class="prop-label">Proposition 238</p>
+  <h1 style="font-size:clamp(30px,7vw,44px)">Buy the Houses. <span class="river">Let the River Flood.</span></h1>
+
+  <div class="ballot">
+    <span class="tag">Ballot Question</span>
+    <p>Shall the United States create a $10 billion, ten-year Flood Buyout Fund that, through state agencies modeled on New Jersey's Blue Acres program, offers every owner of a FEMA-designated Severe Repetitive Loss home, within three years, a voluntary purchase at pre-flood fair market value plus relocation assistance; demolishes purchased homes; permanently restricts that land to floodplain habitat and public open space; and publishes yearly counts of offers made, homes bought, and acres restored?</p>
+  </div>
+
+  <section class="part deal" style="padding-top:0">
+    <h2>Explanation</h2>
+    <p>About 44,600 homes insured by federal flood insurance have flooded roughly five times each. They are about 0.6% of insured homes but drew about 10% of claims. A YES vote spends $1 billion a year for ten years (about $3 per American per year) to offer their owners a voluntary buyout at pre-flood value, then turns the land into permanent wetland, park and flood storage. Owners who say no keep their homes. Towns lose some tax base and neighbors.</p>
+    <p><a href="index.html">Read the full proposition, the case for and against, and the sources →</a></p>
+  </section>
+
+  <section style="padding:24px 0 48px">
+    <h2 class="sans" style="font-size:22px;margin:0 0 12px">Would you take this deal?</h2>
+    <div id="ballot-slot"></div>
+  </section>
+</main>
+
+<script>
+  // Paste your Google Form's EMBED link between the quotes.
+  // (Google Form → Send → the < > tab → copy just the src="..." URL.)
+  const FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSewpmFEblUSrJr1J658P8aXBNxa3Kzh5dsPxynvJ1VaPf0-XQ/viewform?embedded=true";
+
+  const slot = document.getElementById("ballot-slot");
+  if (FORM_EMBED_URL.includes("docs.google.com/forms")) {
+    const f = document.createElement("iframe");
+    f.className = "vote-frame";
+    f.src = FORM_EMBED_URL;
+    f.title = "Ballot: Yes, No, or Yes if";
+    f.loading = "lazy";
+    slot.appendChild(f);
+  } else {
+    slot.innerHTML = '<div class="placeholder">Ballot form not connected yet. (Site owner: paste your Google Form embed link into <code>FORM_EMBED_URL</code> in vote.html.)</div>';
+  }
+</script>
+</body>
+</html>
